@@ -4,12 +4,13 @@
 
 set -e
 
-mkdir -p ~/.config/nvim
 mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/nvim/colors
 
 ln -sf ~/my/dots/bashrc ~/.bashrc
 ln -sf ~/my/dots/bash_profile ~/.bash_profile
 ln -sf ~/my/dots/init.vim ~/.config/nvim/init.vim
+ln -sf ~/my/dots/mycolors.vim ~/.config/nvim/colors/mycolors.vim
 ln -sf ~/my/dots/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # install vim plug for neovim if it doesn't exist

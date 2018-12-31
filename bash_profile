@@ -15,6 +15,6 @@ export CLICOLOR=1
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:~/go/bin
 
-source ~/.bashrc
-
 [ -r ~/my/keys/envars ] && . ~/my/keys/envars
+
+. ~/.bashrc

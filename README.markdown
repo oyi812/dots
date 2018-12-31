@@ -1,6 +1,8 @@
-# vim: filetype=markdown
+# dots
 
---- v for nvim
+## nvim
+
+v for nvim
 
 <leader>\ sequence to exit insert mode
 WW to write file
@@ -17,4 +19,7 @@ cd on directory to change CWD for opening terminal in tab
 :TabooOpen <tabname>
 :TabooRename <tabname>
 :TabooReset
+
+### window management
+:help CTRL-W
 
