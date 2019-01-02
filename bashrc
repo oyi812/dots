@@ -3,5 +3,6 @@
 # functions and aliases reside here
 
 alias v=nvim
-alias l="ls -lart"
+#alias vs='nvim -S'
+alias l='ls -lart'
 

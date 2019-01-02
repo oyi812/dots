@@ -16,6 +16,10 @@ function! SyntaxItem()
 endfunction
 "set statusline=%{SyntaxItem()}
 
+"TODO see https://stackoverflow.com/questions/4226905/vim-nerdtree-not-recovered-in-session-restore
+"TODO see https://gist.github.com/scrooloose/1527501
+"TODO get rid of NERDTree and open terminal in tab dir (tcd)
+"https://neovim.io/doc/user/channel.html#channel
 "tab terminal(s) to use NERDTree root path
 function! g:OpenTerminal()
   if exists('b:NERDTree')
@@ -31,20 +35,28 @@ endfunction
 "autocmd TabNewEntered * call OnTabEnter(expand("<amatch>"))
 "autocmd TabNewEntered * call OpenTerminal()
 
-inoremap <leader>\ <Esc>
+inoremap <S-CR> <CR>
+inoremap <CR> <Esc>
 "nnoremap <leader>t :terminal<CR>
+nnoremap <leader>r :TabooRename 
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>t :call OpenTerminal()<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <leader>q :qa<CR>
+nnoremap <leader>ww :w<CR>
+nnoremap <leader>wq :wq<CR>
+nnoremap <leader>qq :q<CR>
+nnoremap <leader>qa :qa<CR>
+nnoremap <leader>bd :bd<CR>
 nnoremap <leader>/ :nohls<CR>
-nnoremap <leader>§ :TabooRename 
+"nnoremap <leader>s :mksession<CR>
+"nnoremap <leader>h :sp<CR>
+"nnoremap <leader>v :vs<CR>
+nnoremap <leader>d :bd<CR>
 nnoremap § gt
 "noremap TT :vsplit <Bar> :terminal<CR>a
 "map ± :NERDTreeFind<CR> "open NERDTree at buffer location
 
 " terminal
-tnoremap <leader>\ <C-\><C-N>
+tnoremap <S-CR> <C-\><C-N>
 
 "non-recursive normal
 nnoremap <S-h> <C-w>h
@@ -66,7 +78,8 @@ set nowrap
 set textwidth=0 wrapmargin=0 "nowrap
 
 set splitright
-set sessionoptions+=tabpages,globals
+set splitbelow
+"set sessionoptions+='tabpages,globals,options,winpos'
 set laststatus=2
 set noshowmode
 set background=dark

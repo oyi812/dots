@@ -59,6 +59,7 @@ call Highlight('Normal', g:Green500, g:WindowBG, 'NONE')
 call Highlight('NonText', g:Green900, g:WindowBG, 'NONE')
 call Highlight('EndOfBuffer', g:WindowBG, g:WindowBG, 'NONE')
 call Highlight('CursorLine', g:Green900, g:LineBG, 'NONE')
+call Highlight('Cursor', g:LineBG, g:Green50, 'NONE')
 
 "700
 call Highlight('goType', g:Green700, g:WindowBG, 'NONE')
