@@ -11,9 +11,9 @@ function! Highlight(hg, fg, bg, em)
 endfunction
 
 "my colors
-let g:WindowBG = '#030903'
-let g:VisualBG = '#0D200D'
-let g:LineBG = '#080F08'
+let g:WindowBG = '#121212'
+let g:VisualBG = '#0F0F0F'
+let g:LineBG = '#0F0F0F'
 let g:Black = '#000000'
 let g:White = '#FFFFFF'
 
@@ -45,60 +45,61 @@ let g:Gray800 = '#424242'
 let g:Gray900 = '#212121'
 
 "200
-call Highlight('goTodo', g:Green200, g:WindowBG, 'NONE')
-call Highlight('goEscapeC', g:Green100, g:WindowBG, 'NONE')
-call Highlight('goComment', g:Green200, g:WindowBG, 'NONE')
+call Highlight('goTodo', g:Gray200, g:WindowBG, 'NONE')
+call Highlight('goEscapeC', g:Gray100, g:WindowBG, 'NONE')
+call Highlight('goComment', g:Gray200, g:WindowBG, 'NONE')
 
 "300
-call Highlight('goDecimalInt', g:Green300, g:WindowBG, 'NONE')
-call Highlight('goString', g:Green300, g:WindowBG, 'NONE')
-call Highlight('goFloat', g:Green300, g:WindowBG, 'NONE')
+call Highlight('goDecimalInt', g:Gray300, g:WindowBG, 'NONE')
+call Highlight('goConstants', g:Gray300, g:WindowBG, 'NONE')
+call Highlight('goString', g:Gray300, g:WindowBG, 'NONE')
+call Highlight('goFloat', g:Gray300, g:WindowBG, 'NONE')
 
 "500
-call Highlight('Normal', g:Green500, g:WindowBG, 'NONE')
-call Highlight('NonText', g:Green900, g:WindowBG, 'NONE')
+call Highlight('Normal', g:Gray500, g:WindowBG, 'NONE')
+call Highlight('NonText', g:Gray900, g:WindowBG, 'NONE')
 call Highlight('EndOfBuffer', g:WindowBG, g:WindowBG, 'NONE')
-call Highlight('CursorLine', g:Green900, g:LineBG, 'NONE')
-call Highlight('Cursor', g:LineBG, g:Green50, 'NONE')
+call Highlight('CursorLine', g:Gray900, g:LineBG, 'NONE')
+call Highlight('Cursor', g:LineBG, g:Gray50, 'NONE')
 
 "700
-call Highlight('goType', g:Green700, g:WindowBG, 'NONE')
-call Highlight('goFloats', g:Green700, g:WindowBG, 'NONE')
-call Highlight('goDeclType', g:Green700, g:WindowBG, 'NONE')
-call Highlight('goSignedInts', g:Green700, g:WindowBG, 'NONE')
-call Highlight('goUnsignedInts', g:Green700, g:WindowBG, 'NONE')
+call Highlight('goType', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goFloats', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goDeclType', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goSignedInts', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goUnsignedInts', g:Gray700, g:WindowBG, 'NONE')
 
 "800
-call Highlight('goLabel', g:Green800, g:WindowBG, 'NONE')
-call Highlight('goRepeat', g:Green800, g:WindowBG, 'NONE')
-call Highlight('goBuiltins', g:Green800, g:WindowBG, 'NONE')
-call Highlight('goDirective', g:Green800, g:WindowBG, 'NONE')
-call Highlight('goStatement', g:Green800, g:WindowBG, 'NONE')
-call Highlight('goDeclaration', g:Green800, g:WindowBG, 'NONE')
-call Highlight('goConditional', g:Green800, g:WindowBG, 'NONE')
+call Highlight('goLabel', g:Gray800, g:WindowBG, 'NONE')
+call Highlight('goRepeat', g:Gray800, g:WindowBG, 'NONE')
+call Highlight('goBuiltins', g:Gray800, g:WindowBG, 'NONE')
+call Highlight('goDirective', g:Gray800, g:WindowBG, 'NONE')
+call Highlight('goStatement', g:Gray800, g:WindowBG, 'NONE')
+call Highlight('goDeclaration', g:Gray800, g:WindowBG, 'NONE')
+call Highlight('goConditional', g:Gray800, g:WindowBG, 'NONE')
 
-call Highlight('NERDTreeBookmarksLeader', g:Green700, g:WindowBG, 'NONE')
-call Highlight('NERDTreeBookmarkName', g:Green300, g:WindowBG, 'NONE')
-call Highlight('NERDTreeBookmark', g:Green700, g:WindowBG, 'NONE')
-call Highlight('NERDTreeCWD', g:Green300, g:WindowBG, 'NONE')
-call Highlight('NERDTreeOpenable', g:Green100, g:WindowBG, 'NONE')
-call Highlight('NERDTreeClosable', g:Green100, g:WindowBG, 'NONE')
-call Highlight('NERDTreeDir', g:Green600, g:WindowBG, 'NONE')
-call Highlight('NERDTreeDirSlash', g:Green700, g:WindowBG, 'NONE')
-call Highlight('NERDTreeFile', g:Green800, g:WindowBG, 'NONE')
-call Highlight('NERDTreeExecFile', g:Green600, g:WindowBG, 'NONE')
+call Highlight('NERDTreeBookmarksLeader', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('NERDTreeBookmarkName', g:Gray300, g:WindowBG, 'NONE')
+call Highlight('NERDTreeBookmark', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('NERDTreeCWD', g:Gray300, g:WindowBG, 'NONE')
+call Highlight('NERDTreeOpenable', g:Gray100, g:WindowBG, 'NONE')
+call Highlight('NERDTreeClosable', g:Gray100, g:WindowBG, 'NONE')
+call Highlight('NERDTreeDir', g:Gray600, g:WindowBG, 'NONE')
+call Highlight('NERDTreeDirSlash', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('NERDTreeFile', g:Gray800, g:WindowBG, 'NONE')
+call Highlight('NERDTreeExecFile', g:Gray600, g:WindowBG, 'NONE')
 hi NERDTreeUp       guifg=#D75F5F       guibg=NONE      gui=NONE
 hi NERDTreeNodeDelimiters       guifg=#D75F5F       guibg=NONE      gui=NONE
 
 call Highlight('TabLineFill', g:Black, g:Black, 'NONE')
-call Highlight('TabLine', g:Black, g:Green200, 'inverse')
-call Highlight('TabLineSel', g:Green900, g:WindowBG, 'inverse')
+call Highlight('TabLine', g:Black, g:Gray200, 'inverse')
+call Highlight('TabLineSel', g:Gray200, g:WindowBG, 'inverse')
 call Highlight('VertSplit', g:Black, g:Black, 'NONE')
-call Highlight('StatusLine', g:Green200, g:Black, 'NONE')
-call Highlight('StatusLineNC', g:Green800, g:Black, 'NONE')
-call Highlight('Visual', g:Green300, g:VisualBG, 'NONE')
-call Highlight('Search', g:VisualBG, g:Green300, 'NONE')
-call Highlight('IncSearch', g:Green300, g:VisualBG, 'NONE')
+call Highlight('StatusLine', g:Gray200, g:Black, 'NONE')
+call Highlight('StatusLineNC', g:Gray800, g:Black, 'NONE')
+call Highlight('Visual', g:Gray300, g:VisualBG, 'NONE')
+call Highlight('Search', g:VisualBG, g:Gray300, 'NONE')
+call Highlight('IncSearch', g:Gray300, g:VisualBG, 'NONE')
 
 " :help highlight-groups
 " :highlight
