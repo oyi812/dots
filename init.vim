@@ -16,6 +16,10 @@ function! SyntaxItem()
 endfunction
 "set statusline=%{SyntaxItem()}
 
+"- open Tree and/or Term manually in new tab
+"- if not possible to restore session tree automatically then
+"  ... set t:... scoped var to flag Tree open in tab
+
 "TODO see https://stackoverflow.com/questions/4226905/vim-nerdtree-not-recovered-in-session-restore
 "TODO see https://gist.github.com/scrooloose/1527501
 "TODO get rid of NERDTree and open terminal in tab dir (tcd)
@@ -41,22 +45,27 @@ inoremap <CR> <Esc>
 nnoremap <leader>r :TabooRename 
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>t :call OpenTerminal()<CR>
-nnoremap <leader>ww :w<CR>
-nnoremap <leader>wq :wq<CR>
-nnoremap <leader>qq :q<CR>
-nnoremap <leader>qa :qa<CR>
-nnoremap <leader>bd :bd<CR>
+"nnoremap <leader>ww :w<CR>
+"nnoremap <leader>wq :wq<CR>
+"nnoremap <leader>qq :q<CR>
+"nnoremap <leader>qa :qa<CR>
+"nnoremap <leader>bd :bd<CR>
 nnoremap <leader>/ :nohls<CR>
 "nnoremap <leader>s :mksession<CR>
 "nnoremap <leader>h :sp<CR>
 "nnoremap <leader>v :vs<CR>
-nnoremap <leader>d :bd<CR>
+"nnoremap <leader>d :bd<CR>
 nnoremap § gt
+nnoremap ; :
 "noremap TT :vsplit <Bar> :terminal<CR>a
 "map ± :NERDTreeFind<CR> "open NERDTree at buffer location
 
 " terminal
-tnoremap <S-CR> <C-\><C-N>
+tnoremap <Esc> <C-\><C-N>
+tnoremap <C-h> <C-\><C-N><C-w>h
+tnoremap <C-j> <C-\><C-N><C-w>j
+tnoremap <C-k> <C-\><C-N><C-w>k
+tnoremap <C-l> <C-\><C-N><C-w>l
 
 "non-recursive normal
 nnoremap <S-h> <C-w>h
@@ -65,8 +74,11 @@ nnoremap <S-l> <C-w>l
 nnoremap <S-k> <C-w>k
 
 "mouse
+noremap <RightMouse> :let @+ = expand("%")<CR>
 noremap <C-LeftMouse> <LeftMouse><Esc><C-V>
 noremap <C-LeftDrag> <LeftDrag>
+
+autocmd BufEnter term://* startinsert
 
 set noswapfile
 "set number "line numbering

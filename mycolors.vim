@@ -11,7 +11,7 @@ function! Highlight(hg, fg, bg, em)
 endfunction
 
 "my colors
-let g:WindowBG = '#121212'
+let g:WindowBG = '#080808'
 let g:VisualBG = '#0F0F0F'
 let g:LineBG = '#0F0F0F'
 let g:Black = '#000000'
