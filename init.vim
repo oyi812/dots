@@ -78,12 +78,20 @@ noremap <RightMouse> :let @+ = expand("%")<CR>
 noremap <C-LeftMouse> <LeftMouse><Esc><C-V>
 noremap <C-LeftDrag> <LeftDrag>
 
+noremap <ScrollWheelUp> k
+noremap <ScrollWheelDown> j
+
 autocmd BufEnter term://* startinsert
 
+filetype plugin indent on
+set tabstop=2
+set shiftwidth=2
 set noswapfile
+set expandtab
+
 "set number "line numbering
 set hidden "change buffers without saving
-set mouse=a "all, scrolls window not cursor
+"set mouse=a "all, scrolls window not cursor
 set clipboard+=unnamedplus "yank to clipboard
 set fillchars+=vert:\  "set blank vertical bar - significant whitespace
 set nowrap

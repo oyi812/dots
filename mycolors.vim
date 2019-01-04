@@ -47,7 +47,6 @@ let g:Gray900 = '#212121'
 "200
 call Highlight('goTodo', g:Gray200, g:WindowBG, 'NONE')
 call Highlight('goEscapeC', g:Gray100, g:WindowBG, 'NONE')
-call Highlight('goComment', g:Gray200, g:WindowBG, 'NONE')
 
 "300
 call Highlight('goDecimalInt', g:Gray300, g:WindowBG, 'NONE')
@@ -59,24 +58,28 @@ call Highlight('goFloat', g:Gray300, g:WindowBG, 'NONE')
 call Highlight('Normal', g:Gray500, g:WindowBG, 'NONE')
 call Highlight('NonText', g:Gray900, g:WindowBG, 'NONE')
 call Highlight('EndOfBuffer', g:WindowBG, g:WindowBG, 'NONE')
-call Highlight('CursorLine', g:Gray900, g:LineBG, 'NONE')
+call Highlight('CursorLine', g:Gray500, g:LineBG, 'NONE')
 call Highlight('Cursor', g:LineBG, g:Gray50, 'NONE')
 
+"600
+call Highlight('goType', g:Gray600, g:WindowBG, 'NONE')
+call Highlight('goFloats', g:Gray600, g:WindowBG, 'NONE')
+call Highlight('goDeclType', g:Gray600, g:WindowBG, 'NONE')
+call Highlight('goExtraType', g:Gray600, g:WindowBG, 'NONE')
+call Highlight('goSignedInts', g:Gray600, g:WindowBG, 'NONE')
+call Highlight('goUnsignedInts', g:Gray600, g:WindowBG, 'NONE')
+
 "700
-call Highlight('goType', g:Gray700, g:WindowBG, 'NONE')
-call Highlight('goFloats', g:Gray700, g:WindowBG, 'NONE')
-call Highlight('goDeclType', g:Gray700, g:WindowBG, 'NONE')
-call Highlight('goSignedInts', g:Gray700, g:WindowBG, 'NONE')
-call Highlight('goUnsignedInts', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goLabel', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goRepeat', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goBuiltins', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goDirective', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goStatement', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goDeclaration', g:Gray700, g:WindowBG, 'NONE')
+call Highlight('goConditional', g:Gray700, g:WindowBG, 'NONE')
 
 "800
-call Highlight('goLabel', g:Gray800, g:WindowBG, 'NONE')
-call Highlight('goRepeat', g:Gray800, g:WindowBG, 'NONE')
-call Highlight('goBuiltins', g:Gray800, g:WindowBG, 'NONE')
-call Highlight('goDirective', g:Gray800, g:WindowBG, 'NONE')
-call Highlight('goStatement', g:Gray800, g:WindowBG, 'NONE')
-call Highlight('goDeclaration', g:Gray800, g:WindowBG, 'NONE')
-call Highlight('goConditional', g:Gray800, g:WindowBG, 'NONE')
+call Highlight('goComment', g:Gray800, g:WindowBG, 'NONE')
 
 call Highlight('NERDTreeBookmarksLeader', g:Gray700, g:WindowBG, 'NONE')
 call Highlight('NERDTreeBookmarkName', g:Gray300, g:WindowBG, 'NONE')
@@ -86,7 +89,7 @@ call Highlight('NERDTreeOpenable', g:Gray100, g:WindowBG, 'NONE')
 call Highlight('NERDTreeClosable', g:Gray100, g:WindowBG, 'NONE')
 call Highlight('NERDTreeDir', g:Gray600, g:WindowBG, 'NONE')
 call Highlight('NERDTreeDirSlash', g:Gray700, g:WindowBG, 'NONE')
-call Highlight('NERDTreeFile', g:Gray800, g:WindowBG, 'NONE')
+call Highlight('NERDTreeFile', g:Gray700, g:WindowBG, 'NONE')
 call Highlight('NERDTreeExecFile', g:Gray600, g:WindowBG, 'NONE')
 hi NERDTreeUp       guifg=#D75F5F       guibg=NONE      gui=NONE
 hi NERDTreeNodeDelimiters       guifg=#D75F5F       guibg=NONE      gui=NONE
