@@ -80,8 +80,8 @@ set laststatus=2
 set noshowmode
 set background=dark
 set termguicolors
-set sessionoptions+=tabpages,globals
-",options,winpos
+set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,globals,winpos,resize,localoptions,help,folds
+
 
 ":help 'runtimepath'
 colorscheme mycolors
