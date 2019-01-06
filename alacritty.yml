@@ -366,24 +366,27 @@ shell:
 #   - Key3 mod Alt mapping for UK mac kbd # symbol Alt-3 combo
 #
 key_bindings:
-  - { key: Key3,     mods: Alt,     chars: "\x23"                        }
-  - { key: Return,   mods: Shift,   chars: "\x1b[13;2u"                  }
+  - { key: NumpadEnter,             chars: "\n"                          }
+  - { key: Return,   mods: Command, chars: "\x1b"                        }
+  - { key: Semicolon,mods: Command, chars: "\x1b"                        }
   - { key: V,        mods: Command, action: Paste                        }
   - { key: C,        mods: Command, action: Copy                         }
   - { key: Paste,                   action: Paste                        }
   - { key: Copy,                    action: Copy                         }
-  - { key: H,        mods: Command, action: Hide                         }
   - { key: Q,        mods: Command, action: Quit                         }
   - { key: W,        mods: Command, action: Quit                         }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
   - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
+  - { key: Key3,     mods: Alt,     chars: "\x23"                        }
   - { key: Key0,     mods: Command, action: ResetFontSize                }
   - { key: Equals,   mods: Command, action: IncreaseFontSize             }
   - { key: Minus,    mods: Command, action: DecreaseFontSize             }
-  - { key: K,        mods: Command, action: ClearHistory                 }
-  - { key: K,        mods: Command, chars: "\x0c"                        }
+  - { key: H,        mods: Command, chars: "\x1bOD",   mode: AppCursor   }
+  - { key: J,        mods: Command, chars: "\x1bOB",   mode: AppCursor   }
+  - { key: K,        mods: Command, chars: "\x1bOA",   mode: AppCursor   }
+  - { key: L,        mods: Command, chars: "\x1bOC",   mode: AppCursor   }
   - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
   - { key: PageUp,                  chars: "\x1b[5~"                     }
@@ -475,4 +478,3 @@ key_bindings:
   - { key: F10,      mods: Command, chars: "\x1b[21;3~"                  }
   - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
-  - { key: NumpadEnter,             chars: "\n"                          }
