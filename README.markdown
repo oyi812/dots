@@ -1,8 +1,25 @@
 # dots
 
-## nvim
+## cmdline tools
 
+### exa - better ls
+https://github.com/ogham/exa
+brew install exa
+
+### rg - better grep
+
+### brew install fd
+fd
+
+### nvim - better vim
 v for nvim
+
+TODO
+### bat - better cat
+https://github.com/sharkdp/bat
+
+### z - better cd (no necessary, use fd <expr> <path>
+https://github.com/rupa/z
 
 <leader>\ sequence to exit insert mode
 WW to write file
@@ -23,3 +40,5 @@ cd on directory to change CWD for opening terminal in tab
 ### window management
 :help CTRL-W
 
+## TIPS
+Ctrl-R then a to insert the contents of the a register, or Ctrl-R then " to insert the contents of the unnamed register

@@ -1,10 +1,15 @@
 "https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85
 
 ":PlugInstall
+"https://github.com/justinmk/vim-dirvish#readme
 "https://github.com/junegunn/vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
+"Plug 'justinmk/vim-dirvish'
 Plug 'gcmt/taboo.vim'
 call plug#end()
+"prevent netrw from loading
+let g:loaded_netrw=1
+let g:netrw_loaded_netrwPlugin=1
 
 "show highlight group under cursor in status line
 "uncomment line below to turn on
@@ -82,6 +87,13 @@ set background=dark
 set termguicolors
 set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,globals,winpos,resize,localoptions,help,folds
 
+" Switch off all auto-indenting
+set nocindent
+set nosmartindent
+set noautoindent
+set indentexpr=
+filetype indent off
+filetype plugin indent off
 
 ":help 'runtimepath'
 colorscheme mycolors

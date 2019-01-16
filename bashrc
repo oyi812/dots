@@ -4,7 +4,7 @@
 
 alias v=nvim
 #alias vs='nvim -S'
-alias l='ls -lart'
+alias l='exa -l -s modified --git --time-style iso --group-directories-first'
 
 
 md() {
