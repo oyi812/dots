@@ -4,6 +4,8 @@
 
 set -e
 
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/nvim/colors
 
