@@ -19,7 +19,7 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 200
+    columns: 145
     lines: 45
 
   # Window padding (changes require restart)
@@ -103,7 +103,7 @@ font:
     style: Italic
 
   # Point size
-  size: 11.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

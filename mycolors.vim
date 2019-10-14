@@ -79,7 +79,7 @@ call Highlight('goDeclaration', g:Gray700, g:WindowBG, 'NONE')
 call Highlight('goConditional', g:Gray700, g:WindowBG, 'NONE')
 
 "800
-call Highlight('goComment', g:Gray800, g:WindowBG, 'NONE')
+call Highlight('goComment', g:Green700, g:WindowBG, 'NONE')
 
 call Highlight('NERDTreeBookmarksLeader', g:Gray700, g:WindowBG, 'NONE')
 call Highlight('NERDTreeBookmarkName', g:Gray300, g:WindowBG, 'NONE')
