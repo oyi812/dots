@@ -1,10 +1,10 @@
 # vim: filetype=sh
 # executed by login shell
 
-
 GREEN="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PS1="${GREEN}\A \w${RESET} "
 export CLICOLOR=1

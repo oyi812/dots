@@ -4,7 +4,9 @@
 
 alias v=nvim
 #alias vs='nvim -S'
-alias l='exa -l -s modified --git --time-style iso --group-directories-first'
+alias python=python3
+alias a='open -n /Applications/Alacritty.app'
+alias l='exa -l -a -s modified --git --time-style iso --group-directories-first'
 
 
 md() {

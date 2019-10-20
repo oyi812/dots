@@ -1,44 +1,38 @@
 # dots
 
-## cmdline tools
-
-### exa - better ls
-https://github.com/ogham/exa
-brew install exa
-
-### rg - better grep
-
-### brew install fd
+## homebrew
+bash
+exa
+fzf
+rg
 fd
+jq
 
-### nvim - better vim
-v for nvim
-
-TODO
-### bat - better cat
-https://github.com/sharkdp/bat
-
-### z - better cd (no necessary, use fd <expr> <path>
-https://github.com/rupa/z
-
-<leader>\ sequence to exit insert mode
-WW to write file
-TT to open terminal
-H,J,K,L to move between windows
-
-§ for NERDTree
-± to locate current buffer in tree
-t open file in tab
-gt,<N>gt to move between tabs
-cd on directory to change CWD for opening terminal in tab
+## macos setup
+xcode-select --install
+chsh -s /usr/local/bin/bash
 
 :Bookmark <name>
 :TabooOpen <tabname>
 :TabooRename <tabname>
 :TabooReset
 
-### window management
-:help CTRL-W
+### vim
+Ctrl-w     window
+Ctrl-r     register
 
-## TIPS
-Ctrl-R then a to insert the contents of the a register, or Ctrl-R then " to insert the contents of the unnamed register
+## TODO
+- list brew installations
+- list macos customisations
+- comment nvim config file changes
+- nvim tabs and session save and restore
++ brew upgrade
++ bash install & chsh -s /bin/.../bash
++ vim/tmux tab/status lines both at top/bottom of screen with same/similar colours
+
+## HOWTO
+[neovim.io/doc/user/](https://neovim.io/doc/user/)
+[neovim.io/doc/user/motion](https://neovim.io/doc/user/motion.html)
+[man1/tmux.1](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
+
+
