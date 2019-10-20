@@ -80,36 +80,28 @@ tabspaces: 4
 
 # Font configuration (changes require restart)
 # https://quoteunquoteapps.com/courierprime/
+# https://vfoley.xyz/lesser-known-coding-fonts/
 font:
-  # Normal (roman) font face
   normal:
-    family: Courier Prime Code
-    #family: Monaco
-    # The `style` can be specified to pick a specific face.
+    family: Input
     style: Regular
 
-  # Italic font face
-  bold:
-    #family: Monaco
-    family: Courier Prime Code
-    # The `style` can be specified to pick a specific face.
-    # style: Bold
+  #bold:
+    #family: Menlo
+    #style: Bold
 
-  # Italic font face
-  italic:
-    #family: Monaco
-    family: Courier Prime Code
-    # The `style` can be specified to pick a specific face.
-    style: Italic
+  #italic:
+    #family: Menlo
+    #style: Italic
 
   # Point size
-  size: 14.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 1
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
@@ -123,9 +115,6 @@ font:
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`
   use_thin_strokes: true
-
-# Display the time it takes to redraw each frame.
-render_timer: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -286,9 +275,16 @@ live_config_reload: true
 # Entries in `shell.args` are passed unmodified as arguments to the shell.
 #
 shell:
-  program: /bin/bash
+  program: /usr/local/bin/tmux
   args:
-    - --login
+    - -u
+
+debug:
+  render_timer: false
+  persistent_logging: false
+  log_level: Warn
+  print_events: false
+  ref_test: false
 
 # Key bindings
 #
@@ -319,6 +315,8 @@ shell:
 # Values for `mods`:
 #   - Command
 #   - Control
+#   - Option
+#   - Super
 #   - Shift
 #   - Alt
 #
@@ -343,9 +341,12 @@ shell:
 #   - ResetFontSize
 #   - ScrollPageUp
 #   - ScrollPageDown
+#   - ScrollLineUp
+#   - ScrollLineDown
 #   - ScrollToTop
 #   - ScrollToBottom
 #   - ClearHistory
+#   - SpawnNewInstance
 #   - Hide
 #   - Quit
 #

@@ -1,25 +1,40 @@
-"https://medium.freecodecamp.org/learn-linux-vim-basic-features-19134461ab85
-
 ":PlugInstall
-"https://github.com/justinmk/vim-dirvish#readme
-"https://github.com/junegunn/vim-plug
-call plug#begin('~/.local/share/nvim/plugged')
-"Plug 'justinmk/vim-dirvish'
+" :so[urce] %
+" :so ~/.vimrc
+call plug#begin(stdpath('data') . '/plugged')
+Plug 'tpope/vim-fugitive'
 Plug 'gcmt/taboo.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
+Plug 'junegunn/fzf.vim'
+Plug 'ajmwagar/vim-deus'
+Plug 'vim-syntastic/syntastic'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
+
 "prevent netrw from loading
 let g:loaded_netrw=1
 let g:netrw_loaded_netrwPlugin=1
 
 "show highlight group under cursor in status line
 "uncomment line below to turn on
-"function! SyntaxItem()
-"  return synIDattr(synID(line("."),col("."),1),"name")
-"endfunction
-"set statusline=%{SyntaxItem()}
+function! SyntaxItem()
+  return synIDattr(synID(line("."),col("."),1),"name")
+endfunction
+
+set statusline=
+set statusline+=%{FugitiveStatusline()}
+set statusline+=\ %f
+set statusline+=%m\ 
+set statusline+=%=
+set statusline+=%{SyntaxItem()}
+set statusline+=\ %l:%c
+set statusline+=\ 
+
+" set statusline+=%#PmenuSel#
 
 "tabs with optional name tagging for window tabs over same path
-nnoremap <leader>t :tabe<CR><Bar>:tcd 
+" :tcd
+nnoremap <leader>t :tabe<CR><Bar>:TabooRename 
 nnoremap <leader>n :TabooRename 
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
@@ -31,7 +46,14 @@ nnoremap <leader>7 7gt
 nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 
+" de-highlight search results
 nnoremap <leader>/ :nohls<CR>
+
+" Fzf
+nnoremap <silent> <leader>r :Rg<Space>
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>g :GFiles?<CR>
 
 " gf - open file under cursor
 " :tcd change tab default dir
@@ -71,7 +93,8 @@ filetype plugin indent on
 "set noswapfile
 "set expandtab
 
-"set number "line numbering
+set relativenumber " relative line numbering
+set number "line numbering
 set hidden "change buffers without saving
 set mouse=a "all, scrolls window not cursor
 set clipboard+=unnamedplus "yank to clipboard
@@ -83,8 +106,6 @@ set splitright
 set splitbelow
 set laststatus=2
 set noshowmode
-set background=dark
-set termguicolors
 set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,globals,winpos,resize,localoptions,help,folds
 
 " Switch off all auto-indenting
@@ -92,11 +113,22 @@ set nocindent
 set nosmartindent
 set noautoindent
 set indentexpr=
+
 filetype indent off
 filetype plugin indent off
 
 ":help 'runtimepath'
-colorscheme mycolors
+"colorscheme mycolors
+
+" deus
+set t_Co=256
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set background=dark
+colorscheme deus
+let g:deus_termcolors=256
+
 syntax on
 
 " see https://github.com/gcmt/taboo.vim
