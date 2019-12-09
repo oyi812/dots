@@ -83,7 +83,7 @@ tabspaces: 4
 # https://vfoley.xyz/lesser-known-coding-fonts/
 font:
   normal:
-    family: Input
+    family: input
     style: Regular
 
   #bold:
