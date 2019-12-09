@@ -8,6 +8,8 @@ defaults write com.apple.finder AppleShowAllFiles YES
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/nvim/colors
 
+ln -sf ~/my/priv/gitconfig ~/.gitconfig
+
 ln -sf ~/my/dots/bashrc ~/.bashrc
 ln -sf ~/my/dots/tmux.conf ~/.tmux.conf
 ln -sf ~/my/dots/bash_profile ~/.bash_profile
@@ -18,6 +20,8 @@ ln -sf ~/my/dots/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # install google-cloud-sdk and move to ~/google-cloud-sdk
 # source path in profile_bash
+
+tmux source-file ~/.tmux.conf
 
 # install vim plug for neovim if it doesn't exist
 if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then

@@ -8,7 +8,6 @@ alias python=python3
 alias a='open -n /Applications/Alacritty.app'
 alias l='exa -l -a -s modified --git --time-style iso --group-directories-first'
 
-
 md() {
   mkdir -p $1
   cd $1
@@ -45,19 +44,6 @@ rr() {
 vv() {
   tmux split-window -h -p 60 'nvim --cmd redraw'
 }
-
-w1() { tmux select-window -t 1 ; }
-w2() { tmux select-window -t 2 ; }
-w3() { tmux select-window -t 3 ; }
-w4() { tmux select-window -t 4 ; }
-w5() { tmux select-window -t 5 ; }
-w6() { tmux select-window -t 6 ; }
-w7() { tmux select-window -t 7 ; }
-w8() { tmux select-window -t 8 ; }
-w9() { tmux select-window -t 9 ; }
-w10() { tmux select-window -t 10 ; }
-w11() { tmux select-window -t 11 ; }
-w12() { tmux select-window -t 12 ; }
 
 pwgen() {
   LC_ALL=C tr -dc 'A-Za-z0-9!#$%&*~' </dev/urandom | head -c 16 ; echo

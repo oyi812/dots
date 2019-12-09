@@ -27,8 +27,18 @@ set statusline+=\ %f
 set statusline+=%m\ 
 set statusline+=%=
 set statusline+=%{SyntaxItem()}
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 set statusline+=\ %l:%c
 set statusline+=\ 
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " set statusline+=%#PmenuSel#
 
@@ -93,6 +103,7 @@ filetype plugin indent on
 "set noswapfile
 "set expandtab
 
+set ttimeoutlen=5
 set relativenumber " relative line numbering
 set number "line numbering
 set hidden "change buffers without saving
