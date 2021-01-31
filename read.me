@@ -1,0 +1,67 @@
+## git
+
+See https://git-lfs.github.com/
+
+~/.gitconfig
+	[url "git@github.com:"]
+		insteadOf = https://github.com
+
+	[includeIf "gitdir:~/gh/oyi812/"]
+		path = ~/gh/oyi812/gitconfig.include
+	[core]
+		editor = nvim
+
+gitconfig.include:
+	[user]
+		name = xxx
+		email = xxx@gmail.com
+
+
+
+## homebrew
+exa
+fzf
+rg
+fd
+jq
+lf
+
+awscli
+
+## macos setup
+xcode-select --install
+chsh -s /usr/local/bin/bash
+chsh -s /bin/zsh
+
+## brew
+
+$ brew list | xargs brew reinstall
+
+## TODO
+- remove dups from history
+- list macos customisations
+- comment nvim config file changes
+? nvim tabs and session save and restore
+- nvim colours window base line / status line stand out
+- https://github.com/tpope/vim-rhubarb
++ brew upgrade
++ bash install & chsh -s /bin/.../bash
++ vim/tmux tab/status lines both at top/bottom of screen with same/similar colours
+- https://gruntwork.io/guides/foundations/how-to-configure-production-grade-aws-account-structure
+- slice line util
+
+=======
+## TODO
+- list brew installations
+- list macos customisations
+- comment nvim config file changes
+- nvim tabs and session save and restore
++ brew upgrade
++ bash install & chsh -s /bin/.../bash
++ vim/tmux tab/status lines both at top/bottom of screen with same/similar colours
+
+## HOWTO
+[neovim.io/doc/user/](https://neovim.io/doc/user/)
+[neovim.io/doc/user/motion](https://neovim.io/doc/user/motion.html)
+[man1/tmux.1](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
+
