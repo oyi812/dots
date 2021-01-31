@@ -1,16 +1,6 @@
-" .tree down notes
-" see vim.fandom.com/wiki/Creating_your_own_syntax_files
-" https://vimhelp.org/pattern.txt.html
 if exists("b:current_syntax")
   finish
 endif
-
-"syn region treePath start='\%^' end='^\ze\/' 
-"hi def link treePath Comment
-
-" contains=treeSlash,treePathName,treeSlashCont
-
-" Special, Statement
 
 " /path/name
 syntax match treeSlash  /^\// nextgroup=treePathName

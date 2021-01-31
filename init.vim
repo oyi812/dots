@@ -14,19 +14,10 @@ ln goDeclaration  xxx links to GruvboxRed
 ln goDeclType     xxx links to GruvboxBlue
 ln goBuiltins     xxx links to GruvboxOrange
 
-" to install solarized ...
-" git clone https://github.com/lifepillar/vim-solarized8.git ~/.local/share/nvim/site/pack/themes/opt/solarized8
-" github.com/romainl/flattened
-" curl -o ~/.local/share/nvim/site/pack/themes/opt/flattened/colors/flattened_dark.vim https://raw.githubusercontent.com/romainl/flattened/master/colors/flattened_dark.vim
-" curl -o ~/.local/share/nvim/site/pack/themes/opt/flattened/colors/flattened_light.vim https://raw.githubusercontent.com/romainl/flattened/master/colors/flattened_light.vim
-" curl -o ~/.local/share/nvim/site/pack/themes/opt/flattened/colors/desert-night.vim https://raw.githubusercontent.com/kooparse/vim-color-desert-night/master/colors/desert-night.vim
-" git clone https://github.com/Lokaltog/vim-monotone ~/.local/share/nvim/site/pack/themes/opt/monotone
-
 "prevent netrw from loading
 let g:loaded_netrw=1
 let g:netrw_loaded_netrwPlugin=1
 
-"https://jdhao.github.io/2019/08/16/nvim_config_folding/
 set fillchars=fold:\ 
 set foldmethod=indent
 set foldtext=getline(v:foldstart)
@@ -77,8 +68,6 @@ set indentexpr=
 filetype indent off
 filetype plugin indent off
 
-"status
-"""""""
 function! SyntaxItem()
   return synIDattr(synID(line("."),col("."),1),"name")
 endfunction
@@ -109,8 +98,5 @@ set statusline+=\ %{SyntaxItem()}
 set statusline+=\ 
 
 set background=dark    " Setting dark mode
-"colorscheme flattened_dark
 colorscheme gruvbox
 set termguicolors
-
-" syntax on
