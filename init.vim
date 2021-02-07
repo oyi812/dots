@@ -1,4 +1,6 @@
 
+" :source %
+" :PlugClean
 " :PlugInstall
 call plug#begin(stdpath('data') . '/plugged')
 Plug '~/my/dots/nvim/tree-plugin'
@@ -6,6 +8,7 @@ Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'voldikss/fzf-floaterm'
 Plug 'voldikss/vim-floaterm'
+Plug 'gcmt/taboo.vim'
 call plug#end()
 
 ln goDirective    xxx links to GruvboxAqua
@@ -18,7 +21,21 @@ ln goBuiltins     xxx links to GruvboxOrange
 let g:loaded_netrw=1
 let g:netrw_loaded_netrwPlugin=1
 
+"Taboo[Open|Rename|Reset]
+let g:taboo_close_tab_label="X"
+let g:taboo_tab_format=" %N:%P%m "
+let g:taboo_renamed_tab_format=" %N:%P:%m%l [%x] "
+
+"Floaterm
+let g:floaterm_title='$1/$2'
+let g:floaterm_open_command='vsplit'
+
+"save tab names in session (Taboo)
+set sessionoptions+=tabpages,globals
+set showtabline=2
+
 set fillchars=fold:\ 
+set nofoldenable
 set foldmethod=indent
 set foldtext=getline(v:foldstart)
 
@@ -31,14 +48,15 @@ set noswapfile
 tnoremap <Esc> <C-\><C-n>
 
 " window navigation
-nnoremap <Left>  <C-w><C-h>
-nnoremap <Down>  <C-w><C-j>
-nnoremap <Up>    <C-w><C-k>
-nnoremap <Right> <C-w><C-l>
+nnoremap wh <C-w><C-h>
+nnoremap wj <C-w><C-j>
+nnoremap wk <C-w><C-k>
+nnoremap wl <C-w><C-l>
 
 " de-highlight search results
 nnoremap <leader>/ :nohls<CR>
 nnoremap <leader>l :FloatermNew lf<cr>
+nnoremap <leader>z :FloatermNew --autoclose=2<cr>
 
 noremap ; :
 noremap : ;
