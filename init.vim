@@ -6,9 +6,9 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug '~/my/dots/nvim/tree-plugin'
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'voldikss/fzf-floaterm'
 Plug 'voldikss/vim-floaterm'
 Plug 'gcmt/taboo.vim'
+Plug 'hashivim/vim-terraform'
 call plug#end()
 
 ln goDirective    xxx links to GruvboxAqua
@@ -28,7 +28,7 @@ let g:taboo_renamed_tab_format=" %N:%P:%m%l [%x] "
 
 "Floaterm
 let g:floaterm_title='$1/$2'
-let g:floaterm_open_command='vsplit'
+let g:floaterm_open_command='edit'
 
 "save tab names in session (Taboo)
 set sessionoptions+=tabpages,globals
@@ -48,14 +48,15 @@ set noswapfile
 tnoremap <Esc> <C-\><C-n>
 
 " window navigation
-nnoremap wh <C-w><C-h>
-nnoremap wj <C-w><C-j>
-nnoremap wk <C-w><C-k>
-nnoremap wl <C-w><C-l>
+nnoremap <S-h> <C-w><C-h>
+nnoremap <S-j> <C-w><C-j>
+nnoremap <S-k> <C-w><C-k>
+nnoremap <S-l> <C-w><C-l>
 
 " de-highlight search results
 nnoremap <leader>/ :nohls<CR>
 nnoremap <leader>l :FloatermNew lf<cr>
+nnoremap <leader>f :FloatermNew fzf<cr>
 nnoremap <leader>z :FloatermNew --autoclose=2<cr>
 
 noremap ; :
