@@ -9,13 +9,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'voldikss/vim-floaterm'
 Plug 'gcmt/taboo.vim'
 Plug 'hashivim/vim-terraform'
+Plug 'preservim/nerdtree'
 call plug#end()
-
-ln goDirective    xxx links to GruvboxAqua
-ln goConstants    xxx links to GruvboxPurple
-ln goDeclaration  xxx links to GruvboxRed
-ln goDeclType     xxx links to GruvboxBlue
-ln goBuiltins     xxx links to GruvboxOrange
 
 "prevent netrw from loading
 let g:loaded_netrw=1
@@ -29,6 +24,11 @@ let g:taboo_renamed_tab_format=" %N:%P:%m%l [%x] "
 "Floaterm
 let g:floaterm_title='$1/$2'
 let g:floaterm_open_command='edit'
+
+"NERDTree
+let g:NERDTreeUseTCD=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeChDirMode=3
 
 "save tab names in session (Taboo)
 set sessionoptions+=tabpages,globals
@@ -57,6 +57,8 @@ nnoremap <S-l> <C-w><C-l>
 nnoremap <leader>/ :nohls<CR>
 nnoremap <leader>l :FloatermNew lf<cr>
 nnoremap <leader>f :FloatermNew fzf<cr>
+nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>x :tabnew<cr>:tcd <C-r>"<cr>
 nnoremap <leader>z :FloatermNew --autoclose=2<cr>
 
 noremap ; :
@@ -70,8 +72,8 @@ set ttimeoutlen=5
 set mouse=a "all, scrolls window not cursor
 set clipboard+=unnamedplus "yank to clipboard
 
-set nowrap
-set textwidth=0 wrapmargin=0 "nowrap
+set number
+set wrap
 
 set splitright
 set splitbelow
@@ -119,3 +121,15 @@ set statusline+=\
 set background=dark    " Setting dark mode
 colorscheme gruvbox
 set termguicolors
+
+syntax on
+hi Comment gui=italic cterm=italic
+hi Statement gui=bold cterm=bold
+"todo de-emphasise line numbering
+
+ln goDirective    xxx links to GruvboxAqua
+ln goConstants    xxx links to GruvboxPurple
+ln goDeclaration  xxx links to GruvboxRed
+ln goDeclType     xxx links to GruvboxBlue
+ln goBuiltins     xxx links to GruvboxOrange
+
