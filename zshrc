@@ -8,8 +8,22 @@ alias t='exa --tree --sort modified --colour auto'
 alias v=nvim
 alias h='history 1'
 
+function gg() {
+  rg --hidden -i -g '!.git/' "$1"
+}
+
+function pwgen() {
+  </dev/urandom | LC_ALL=C tf -dc A-Za-z0-9 | head -c16 | pbcopy
+}
+
+function gitbranch() {
+  repo="$(git branch --show-current 2> /dev/null)"
+  [ ! -z "${repo}" ] && echo "${repo} "
+}
+
 # red,blue,green,cyan,yellow,magenta,black,white 
-PROMPT='%F{green}%*%f %F{cyan}%~%f '
+setopt PROMPT_SUBST
+export PROMPT='%F{green}%*%f %F{cyan}%~%f %F{red}$(gitbranch)%f'
 
 HISTSIZE=10000
 SAVEHIST=20000
