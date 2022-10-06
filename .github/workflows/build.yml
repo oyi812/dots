@@ -28,6 +28,6 @@ jobs:
     #if: ${{ env.v1 = 'the-value-of-v1' }}
     steps:
       - run: |-
-          echo "v1 = ${env.v1}"
+          echo "v1 = ${v1}"
           echo "v2 = ${{ needs.two.matrix.protagonist }}"
     
