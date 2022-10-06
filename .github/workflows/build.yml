@@ -21,7 +21,7 @@ jobs:
         protagonist: [neo, trin]
     steps:
       - run: |-
-          echo "two: ${matrix.protagonist}"
+          echo "two: ${{ matrix.protagonist }}"
   six:
     runs-on: ubuntu-latest
     needs: [one, two]
