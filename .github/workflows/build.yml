@@ -9,6 +9,7 @@ jobs:
       v1: the-value-of-v1
     outputs:
       v2: ${{ steps.one.outputs.v2 }}
+    steps:
       - id: one
         run: |-
           echo "::set-output name=v2::$(date)"
