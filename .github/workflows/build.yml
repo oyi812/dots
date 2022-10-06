@@ -7,26 +7,26 @@ jobs:
     timeout-minutes: 1
     env:
       v1: the-value-of-v1
+    outputs:
+      v2: ${{ steps.one.outputs.v2 }}
+      - id: one
+        run: |-
+          echo "::set-output name=v2::$(date)"
   two:
     runs-on: ubuntu-latest
     needs: one
     strategy:
       matrix:
         protagonist: [neo, trin]
-    outputs:
-      v2: ${{ steps.one.outputs.v2 }}
     steps:
       - run: |-
           echo "two: ${{ matrix.protagonist }}"
-      - id: one
-        run: |-
-          echo "::set-output name=v2::$(date)"
   six:
     runs-on: ubuntu-latest
     needs: [one, two]
     #if: ${{ env.v1 = 'the-value-of-v1' }}
     steps:
       - run: |-
-          echo "v1 = ${v1}"
-          echo "v2 = ${{ needs.two.outputs.v2 }}"
+          echo "v1 = ${env.v1}"
+          echo "v2 = ${{ needs.two.matrix.protagonist }}"
     
