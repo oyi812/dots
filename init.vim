@@ -49,11 +49,8 @@ nnoremap <S-l> <C-w><C-l>
 
 " de-highlight search results
 nnoremap <leader>/ :nohls<CR>
-nnoremap <leader>l :FloatermNew lf<cr>
-nnoremap <leader>f :FloatermNew fzf<cr>
-nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <leader>x :tabnew<cr>:tcd <C-r>"<cr>
-nnoremap <leader>z :FloatermNew --autoclose=2<cr>
+nnoremap <leader>t :sp \| term<CR>
+nnoremap <leader>vt :vs \| term<CR>
 
 noremap ; :
 noremap : ;
@@ -84,21 +81,18 @@ set indentexpr=
 filetype indent off
 filetype plugin indent off
 
-" Turn off line numbering for terminal
-autocmd TermOpen * setlocal nonumber norelativenumber
-
-function! SyntaxItem()
-  return synIDattr(synID(line("."),col("."),1),"name")
-endfunction
-
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
+"function! SyntaxItem()
+"  return synIDattr(synID(line("."),col("."),1),"name")
+"endfunction
+"
+"function! GitBranch()
+"  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+"endfunction
+"
+"function! StatuslineGit()
+"  let l:branchname = GitBranch()
+"  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+"endfunction
 
 set statusline=
 "set statusline+=%#PmenuSel#
@@ -116,8 +110,9 @@ set statusline+=%=
 "set statusline+=\ %p%%
 set statusline+=\ 
 
+"set encoding utf-8
 set background=dark    " Setting dark mode
-colorscheme nord
+colorscheme iceberg
 set termguicolors
 
 syntax on
@@ -125,9 +120,22 @@ hi Comment gui=italic cterm=italic
 "hi Statement gui=bold cterm=bold
 "todo de-emphasise line numbering
 
+hi TermWindow guibg=black
 augroup neo_terminal_autocmds
   autocmd!
+  autocmd TermOpen * setlocal winhighlight=Normal:TermWindow
   autocmd TermOpen * setlocal nonumber norelativenumber
   autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>
   autocmd TermOpen * startinsert
 augroup END
+
+"function! LUATree()
+"lua << EOF
+"require("nvim-tree").setup()
+"EOF
+"endfunction
+
+autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | call LUATree() | set showtabline=2 | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | set showtabline=2 | endif
+

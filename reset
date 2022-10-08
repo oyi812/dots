@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 set -e
 
@@ -8,34 +8,57 @@ echo $my
 data_home="${XDG_DATA_HOME:-$HOME/.local/share}"
 config_home="${XDG_CONFIG_HOME:-$HOME/.config}"
 
+# TODO brew and brew packages
+# eg. neovim exa fd rg jq
+
 # as per homebrew post install instructions
 homebrew() {
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
-# brew packages to install
-echo 'brew install these:'
-echo 'neovim exa fd rg jq'
-
-renew() {
-	name=$1
-	case "$2" in
-	"config")
-		rm -rf ${config_home}/${name}
-		mkdir -p ${config_home}/${name}
-		;;
-	*)
-		printf "usage: renew <name> <type>"
-		;;
-	esac
+rmkdir() {
+  rm -rf $1
+  mkdir -p $1
 }
 
-cp $my/zshrc ~/.zshrc
-renew lf config
-cp $my/lfrc ${config_home}/lf
+d=${config_home}/alacritty
+rmkdir ${d}
+cp $my/alacritty.yml ${d}
 
-renew alacritty config
-cp $my/alacritty.yml ${config_home}/alacritty
-renew nvim config
-cp $my/init.vim ${config_home}/nvim
+d=${config_home}/nvim
+rmkdir ${d}
+cp $my/init.vim ${d}
+
+cp $my/zshrc ~/.zshrc
+
+echo 'installing neovim plugins ...'
+
+# arcticicestudio/nord-vim
+# voldikss/vim-floaterm
+# nvim-tree/nvim-tree.lua
+plugins=(
+  gcmt/taboo.vim
+  preservim/nerdtree
+  cocopon/iceberg.vim
+  hashivim/vim-terraform
+)
+
+pack=$HOME/.local/share/nvim/site/pack
+rm -rf "$pack"
+mkdir -p "$pack"
+
+installplugin() {
+  local plugin="$(echo "$1" | sed -e 's/.*[\/]//' -e 's/^vim-//' -e 's/\.vim//')"
+  local pluginpath="$pack/$plugin/start/$plugin"
+  git clone --depth=1 -q https://github.com/$1.git "$pluginpath"
+  rm -rf "$pluginpath"/.git*
+  rm -rf "$pluginpath"/README*
+  #rm -f "$pluginpath"/*.@(md|mdown|mkdown|markdown)
+  #rm -rf "$pluginpath"/test
+}
+
+for repo in ${plugins[@]}; do
+  installplugin "$repo" &
+done
+wait
